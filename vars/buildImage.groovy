@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String $imageName) {
+def call(String imageName) {
     echo "building docker image..."
     withCredentials ([usernamePassword(credentialsId:'dockerhub',usernameVariable: 'USER',passwordVariable:'PASS')]) {
         sh "docker build -t $imageName ."
